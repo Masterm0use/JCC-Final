@@ -83,5 +83,7 @@ public class AddBierController implements Initializable {
         } catch(Exception e) {
            e.printStackTrace();
           }
+        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
+        stage.close();
 }
 }

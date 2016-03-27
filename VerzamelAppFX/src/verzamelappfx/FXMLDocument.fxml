@@ -4,19 +4,34 @@
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
 <?scenebuilder-background-color 0x9f9f9fff?>
 
 <AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="856.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="verzamelappfx.FXMLDocumentController">
   <children>
-    <TabPane layoutX="24.0" layoutY="14.0" prefHeight="669.0" prefWidth="818.0" tabClosingPolicy="UNAVAILABLE">
+    <TabPane layoutX="24.0" layoutY="14.0" prefHeight="669.0" prefWidth="818.0" side="LEFT" style="" tabClosingPolicy="UNAVAILABLE">
       <tabs>
         <Tab text="Welkom">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background: black;">
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="">
               <children>
-                <AnchorPane layoutX="44.0" layoutY="171.0" minHeight="287.0" minWidth="411.0" prefHeight="287.0" prefWidth="411.0" style="-fx-background: #FFFFFF;" />
-                <Label layoutX="121.0" layoutY="14.0" style="-fx-font: 100px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="VerzamelApp" textFill="#292929" />
+                <AnchorPane layoutX="372.0" layoutY="194.0" minHeight="287.0" minWidth="411.0" prefHeight="287.0" prefWidth="411.0" style="-fx-background: #FFFFFF;">
+                  <children>
+                    <TextArea layoutX="14.0" layoutY="14.0" prefHeight="259.377685546875" prefWidth="383.0" text="Een simple gemaakte app, waarbij &#10;er postzegels en bierdopjes toegevoegd kunnen worden aan de database.&#10;&#10;Verder kan er sets gemaak worden en daarbij voorwerpen aan toegevoegd worden." wrapText="true" />
+                  </children>
+                </AnchorPane>
+                <Label layoutX="121.0" layoutY="14.0" style="-fx-font: 100px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="VerzamelApp">
+                  <textFill>
+                    <Color blue="0.161" green="0.161" red="0.161" fx:id="x1" />
+                  </textFill>
+                </Label>
+                <ImageView fitHeight="303.37767425962784" fitWidth="305.00001525878906" layoutX="40.0" layoutY="178.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../build/classes/verzamelappfx/AlertDialog/illustrjw4.large.png" />
+                  </image>
+                </ImageView>
               </children>
             </AnchorPane>
           </content>
@@ -25,33 +40,37 @@
           <content>
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="628.0" prefWidth="810.0">
               <children>
-                <AnchorPane layoutX="490.0" layoutY="14.0" prefHeight="600.0" prefWidth="314.0" style="">
+                <ListView fx:id="test" prefHeight="451.0" prefWidth="426.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="204.0" />
+                <AnchorPane focusTraversable="false" layoutX="28.0" layoutY="526.0" prefHeight="129.0" prefWidth="300.0" visible="true">
                   <children>
-                    <ListView fx:id="test" prefHeight="578.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0" />
-                    <Label layoutX="0.0" layoutY="0.0" text="Alle Voorwerpen:" />
-                  </children>
-                </AnchorPane>
-                <AnchorPane layoutX="14.0" layoutY="492.0" prefHeight="115.0" prefWidth="300.0">
-                  <children>
-                    <Label layoutX="21.0" layoutY="24.0" text="Voorwerp Toevoegen" />
+                    <Label layoutX="14.0" layoutY="14.0" text="Voorwerp Toevoegen" />
                     <Button id="bottonBier" fx:id="bottonAddBier" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddBier" text="Bierdoptje" />
                     <Button id="bottonBier" fx:id="bottonAddZegel" layoutX="119.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddZegel" text="Postzegel" />
                   </children>
                 </AnchorPane>
+                <Label layoutX="28.0" layoutY="14.0" minHeight="74.0" prefHeight="82.0" prefWidth="504.0" style="-fx-font: 50px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="Voorwerpen" textFill="$x1" />
+                <TextArea layoutX="28.0" layoutY="86.0" prefHeight="95.0" prefWidth="264.0" text="Alle voorwerpen zijn te zien in de rechter tabel. &#10;Verder kunnen we postzegels en bierdopje toegevoegd worden." wrapText="true" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../build/classes/verzamelappfx/AlertDialog/AlertDialog.png" />
+                  </image>
+                </ImageView>
               </children>
             </AnchorPane>
           </content>
         </Tab>
         <Tab text="Sets">
           <content>
-            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="673.0">
+            <AnchorPane focusTraversable="false" prefHeight="129.0" prefWidth="300.0" visible="true">
               <children>
-                <AnchorPane layoutX="490.0" layoutY="14.0" prefHeight="600.0" prefWidth="314.0" style="">
-                  <children>
-                    <ListView id="test" prefHeight="575.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
-                    <Label layoutX="0.0" layoutY="1.0" text="Alle Sets:" />
-                  </children>
-                </AnchorPane>
+                <Label layoutX="33.0" layoutY="14.0" minHeight="74.0" prefHeight="82.0" prefWidth="504.0" style="-fx-font: 50px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="Sets" textFill="$x1" />
+                <TextArea layoutX="33.0" layoutY="84.0" prefHeight="95.0" prefWidth="264.0" text="Alle sets met voorwerpen kunt u hier vinden. Zelf kan er ook voorwerpen aan de sets toegevoegd worden." wrapText="true" />
+                <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@../../build/classes/verzamelappfx/AlertDialog/AlertDialog.png" />
+                  </image>
+                </ImageView>
+                <ListView id="test" layoutX="337.0" layoutY="204.0" prefHeight="451.0" prefWidth="426.0" />
               </children>
             </AnchorPane>
           </content>

@@ -12,6 +12,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.*;
+
 /**
  *
  * @author ruud
@@ -24,6 +25,8 @@ public class Inventaris {
     public List<Voorwerp> getVoorwerpen() {
         return (List<Voorwerp>) Collections.unmodifiableList(voorwerpen);
     }
+    
+     
     
     
     public List<Set> getSets() {
