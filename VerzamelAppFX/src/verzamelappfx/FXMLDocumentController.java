@@ -36,13 +36,16 @@ public class FXMLDocumentController implements Initializable {
     
     
    private Inventaris inv; 
+    //ObservableList<Voorwerp> oListStavaka = FXCollections.observableArrayList(inv.getVoorwerpen());
     
     @FXML
-    private ListView<Voorwerp> test = (ListView<Voorwerp>) inv.getVoorwerpen();
+    private ListView<Voorwerp> test;
     @FXML
     private Button bottonAddBier;
     @FXML
     private Button bottonAddZegel;
+    @FXML
+    private Button bottonAddSet;
     
     
    public void pressButtonAddBier(ActionEvent event) throws Exception {               
@@ -69,12 +72,20 @@ public class FXMLDocumentController implements Initializable {
           }
 }
     
+   public void pressButtonAddSet(ActionEvent event) throws Exception {               
+        try {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddSet.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));  
+                stage.show();
+        } catch(Exception e) {
+           e.printStackTrace();
+          }
+}
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        
     }    
-       
-           
 }
 

@@ -44,6 +44,12 @@ public class AddBierController implements Initializable {
     private TextField PostzegelBreedte;
     @FXML
     private Button buttonPostzegelToevoegen;
+    @FXML
+    private Button buttonSetToevoegen;
+    @FXML
+    private TextField setNaam;
+    @FXML
+    private TextField setJaar;
     
    
     @Override
@@ -72,6 +78,8 @@ public class AddBierController implements Initializable {
         } catch(Exception e) {
            e.printStackTrace();
           }
+        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
+        stage.close();
 }
     
     public void pressToevoegenPostzegel(ActionEvent event) throws Exception { 
@@ -80,6 +88,20 @@ public class AddBierController implements Initializable {
         Voorwerp heinekendop = new Bierdopje(bierMerk.getText(), bierNaam.getText(), bierjaarint);
         inv.add(heinekendop);
 
+        } catch(Exception e) {
+           e.printStackTrace();
+          }
+        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
+        stage.close();
+}
+    
+    public void pressToevoegenSet(ActionEvent event) throws Exception { 
+        try {
+        String naam;
+        int jaar;
+        jaar = Integer.parseInt(setJaar.getText());
+        naam = setNaam.getText();
+        inv.add(new Set(naam, jaar));
         } catch(Exception e) {
            e.printStackTrace();
           }

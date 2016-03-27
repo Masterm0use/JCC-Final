@@ -11,18 +11,24 @@ import java.util.*;
  */
 public class Set {
     private String naam;
+    
     public String getNaam(){return naam;}
+    
     public void setNaam(String value)
     {naam = value;}
+   
     private int jaar;
+    
     public int getJaar() {
         return jaar;
     }
+    
     public void setJaar(int jaar) {
         this.jaar = jaar;
     }
     
     private ArrayList<Voorwerp> voorwerpen;
+   
     public ArrayList getVoorwerpen() {
         return voorwerpen;
     }
