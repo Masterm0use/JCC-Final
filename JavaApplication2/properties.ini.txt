@@ -1,0 +1,4 @@
+driver=
+url=athena01.fhict.local
+username=dbi330403
+password=CPxmT0GQR2
