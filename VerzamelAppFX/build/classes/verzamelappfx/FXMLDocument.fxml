@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="856.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="verzamelappfx.FXMLDocumentController">
+  <children>
+    <TabPane layoutX="24.0" layoutY="14.0" prefHeight="669.0" prefWidth="818.0" tabClosingPolicy="UNAVAILABLE">
+      <tabs>
+        <Tab text="Welkom">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background: black;">
+              <children>
+                <AnchorPane layoutX="44.0" layoutY="171.0" minHeight="287.0" minWidth="411.0" prefHeight="287.0" prefWidth="411.0" style="-fx-background: #FFFFFF;" />
+                <Label layoutX="121.0" layoutY="14.0" style="-fx-font: 100px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="VerzamelApp" textFill="#292929" />
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Voorwerpen">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="628.0" prefWidth="810.0">
+              <children>
+                <AnchorPane layoutX="490.0" layoutY="14.0" prefHeight="600.0" prefWidth="314.0" style="">
+                  <children>
+                    <ListView fx:id="test" prefHeight="578.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="22.0" />
+                    <Label layoutX="0.0" layoutY="0.0" text="Alle Voorwerpen:" />
+                  </children>
+                </AnchorPane>
+                <AnchorPane layoutX="27.0" layoutY="25.0" prefHeight="367.0" prefWidth="327.0">
+                  <children>
+                    <Label layoutX="21.0" layoutY="14.0" text="Voorwerp Toevoegen" />
+                    <Button fx:id="bottonBier" layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#pressButton" text="Button" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab text="Sets">
+          <content>
+            <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="556.0" prefWidth="673.0">
+              <children>
+                <AnchorPane layoutX="490.0" layoutY="14.0" prefHeight="600.0" prefWidth="314.0" style="">
+                  <children>
+                    <ListView id="test" prefHeight="575.0" prefWidth="314.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="25.0" />
+                    <Label layoutX="0.0" layoutY="1.0" text="Alle Sets:" />
+                  </children>
+                </AnchorPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </children>
+</AnchorPane>
