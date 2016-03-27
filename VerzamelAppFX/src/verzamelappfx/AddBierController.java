@@ -41,7 +41,7 @@ public class AddBierController implements Initializable {
     @FXML
     private TextField postzegelLengte;
     @FXML
-    private TextField PostzegelBreedte;
+    private TextField postzegelBreedte;
     @FXML
     private Button buttonPostzegelToevoegen;
     @FXML
@@ -78,15 +78,18 @@ public class AddBierController implements Initializable {
         } catch(Exception e) {
            e.printStackTrace();
           }
-        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
+        Stage stage = (Stage) bottonBierToevoegen.getScene().getWindow();
         stage.close();
 }
     
     public void pressToevoegenPostzegel(ActionEvent event) throws Exception { 
         try {
-        int bierjaarint = Integer.parseInt(bierJaar.getText());
-        Voorwerp heinekendop = new Bierdopje(bierMerk.getText(), bierNaam.getText(), bierjaarint);
-        inv.add(heinekendop);
+        int lengte = Integer.parseInt(postzegelLengte.getText());
+        int breedte = Integer.parseInt(postzegelBreedte.getText());
+        int jaar = Integer.parseInt(postzegelJaar.getText());
+        
+        Voorwerp p1 = new Postzegel(lengte, breedte, postzegelNaam.getText(), jaar);
+        inv.add(p1);
 
         } catch(Exception e) {
            e.printStackTrace();
@@ -105,7 +108,7 @@ public class AddBierController implements Initializable {
         } catch(Exception e) {
            e.printStackTrace();
           }
-        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
+        Stage stage = (Stage) buttonSetToevoegen.getScene().getWindow();
         stage.close();
 }
 }
