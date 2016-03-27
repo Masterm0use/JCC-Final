@@ -34,7 +34,7 @@
                 </ImageView>
                 <ImageView fitHeight="303.37767425962784" fitWidth="305.00001525878906" layoutX="33.0" layoutY="186.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../build/classes/verzamelappfx/AlertDialog/illustrjw4.large.png" />
+                    <Image url="@Assets/test.png" />
                   </image>
                 </ImageView>
               </children>
@@ -72,11 +72,11 @@
                 <TextArea layoutX="33.0" layoutY="84.0" prefHeight="95.0" prefWidth="264.0" text="Alle sets met voorwerpen kunt u hier vinden. Zelf kan er ook voorwerpen aan de sets toegevoegd worden." wrapText="true" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                    <Image url="@../../build/classes/verzamelappfx/AlertDialog/AlertDialog.png" />
+                    <Image url="@Assets/AlertDialog.png" />
                   </image>
                 </ImageView>
                 <ListView id="test" layoutX="337.0" layoutY="204.0" prefHeight="451.0" prefWidth="426.0" />
-                <Button fx:id="bottonAddSet" layoutX="14.0" layoutY="629.0" mnemonicParsing="false" text="Toevoegen" />
+                <Button fx:id="bottonAddSet" layoutX="14.0" layoutY="629.0" mnemonicParsing="false" onAction="#pressButtonAddSet" text="Toevoegen" />
               </children>
             </AnchorPane>
           </content>
