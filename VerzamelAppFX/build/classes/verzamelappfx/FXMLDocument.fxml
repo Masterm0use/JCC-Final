@@ -5,6 +5,7 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?scenebuilder-background-color 0x9f9f9fff?>
 
 <AnchorPane id="AnchorPane" prefHeight="697.0" prefWidth="856.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="verzamelappfx.FXMLDocumentController">
   <children>
@@ -30,10 +31,11 @@
                     <Label layoutX="0.0" layoutY="0.0" text="Alle Voorwerpen:" />
                   </children>
                 </AnchorPane>
-                <AnchorPane layoutX="27.0" layoutY="25.0" prefHeight="367.0" prefWidth="327.0">
+                <AnchorPane layoutX="14.0" layoutY="492.0" prefHeight="115.0" prefWidth="300.0">
                   <children>
-                    <Label layoutX="21.0" layoutY="14.0" text="Voorwerp Toevoegen" />
-                    <Button fx:id="bottonBier" layoutX="22.0" layoutY="43.0" mnemonicParsing="false" onAction="#pressButton" text="Button" />
+                    <Label layoutX="21.0" layoutY="24.0" text="Voorwerp Toevoegen" />
+                    <Button id="bottonBier" fx:id="bottonAddBier" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddBier" text="Bierdoptje" />
+                    <Button id="bottonBier" fx:id="bottonAddZegel" layoutX="119.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddZegel" text="Postzegel" />
                   </children>
                 </AnchorPane>
               </children>

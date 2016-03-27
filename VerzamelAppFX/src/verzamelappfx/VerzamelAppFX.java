@@ -37,8 +37,8 @@ public class VerzamelAppFX extends Application {
      */
     public static void main(String[] args) throws IOException, FileNotFoundException, SQLException {
         
-        //VerzamelAppFX verzamelAppfx = new VerzamelAppFX();
-        //verzamelAppfx.setInventaris();
+        VerzamelAppFX verzamelAppfx = new VerzamelAppFX();
+        verzamelAppfx.setInventaris();
         launch(args);
     }
     

@@ -37,8 +37,8 @@ public class FXMLDocumentController implements Initializable {
     
    private Inventaris inv; 
     
-    //@FXML
-    // private ListView<Voorwerp> test = (ListView<Voorwerp>) inv.getVoorwerpen();
+    @FXML
+    private ListView<Voorwerp> test = (ListView<Voorwerp>) inv.getVoorwerpen();
     @FXML
     private Button bottonAddBier;
     @FXML

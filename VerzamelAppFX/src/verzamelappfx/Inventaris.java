@@ -33,15 +33,15 @@ public class Inventaris {
     public Inventaris() throws FileNotFoundException, IOException, SQLException {
         voorwerpen = new ArrayList<>();
         sets = new ArrayList<>();
-        Properties props = new Properties();
-        try{        File f = new File("properties.properties");
-        InputStream is = new FileInputStream(f);
-        props.load(is);
-        System.out.println(props.getProperty("username"));
-        }
-        catch(FileNotFoundException ex){
-            System.err.println(ex.getMessage());
-        }   
+        //Properties props = new Properties();
+        //try{        File f = new File("properties.properties");
+        //InputStream is = new FileInputStream(f);
+//        props.load(is);
+//        System.out.println(props.getProperty("username"));
+//        }
+//        catch(FileNotFoundException ex){
+//            System.err.println(ex.getMessage());
+//        }   
       
         Voorwerp heinekendop = new Bierdopje("Heineken", "Heineken Special", 2015);
         Voorwerp nlpostzegel = new Postzegel(20, 60, "Wilhelmina3", 1990);
@@ -53,9 +53,9 @@ public class Inventaris {
         voorwerpen.add(nlpostzegel2);
         voorwerpen.add(nlpostzegel3);
         
-        DM = new DatabaseMediator(props);
-        open();
-        DM.save(this);
+        //DM = new DatabaseMediator(props);
+        //open();
+        //DM.save(this);
     }
     
     public void add(Voorwerp item){
