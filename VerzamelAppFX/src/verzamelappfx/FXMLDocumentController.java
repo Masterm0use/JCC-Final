@@ -25,6 +25,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
@@ -42,11 +43,13 @@ public class FXMLDocumentController implements Initializable {
     
     
    private Inventaris inv; 
-   List<String> rekt;
-    
+   List<String> voorwerpUI;
+   List<String> setsUI;
     
     @FXML
-    private ListView<String> test;
+    private ListView<String> voorwerpenPre;
+    @FXML
+    private ListView<String> setsPre;
     @FXML
     private Button bottonAddBier;
     @FXML
@@ -77,38 +80,43 @@ public class FXMLDocumentController implements Initializable {
     private TextField setNaam;
     @FXML
     private TextField setJaar;
+    @FXML
+    private CheckBox cbPostzegel;
+    @FXML
+    private CheckBox cbBierdopje;
 
     public FXMLDocumentController() throws IOException, FileNotFoundException, SQLException {
-        test = new ListView<>();
+        voorwerpenPre = new ListView<>();
+        setsPre = new ListView<>();
         inv = new Inventaris();
-        rekt = new ArrayList<String>();
         
-       
+        voorwerpUI = new ArrayList<String>();
+        setsUI = new ArrayList<String>();
     }
+    
     public void setList(){
-         rekt.clear();
-         rekt = test.getItems();          
+         voorwerpUI.clear();
+         voorwerpUI = voorwerpenPre.getItems();
+         setsUI.clear();
+         setsUI = setsPre.getItems();
         
         for (Voorwerp vw : inv.getVoorwerpen() ) {
-           rekt.add(vw.toString());
+           voorwerpUI.add(vw.toString());
         }
-        test.setItems(FXCollections.observableList(rekt));
+        voorwerpenPre.setItems(FXCollections.observableList(voorwerpUI));
+        
+        for (Set s : inv.getSets()){
+            setsUI.add(s.toString());
+        }
+        setsPre.setItems(FXCollections.observableList(setsUI));
     }
-         //= FXCollections.observableArrayList(inv.getVoorwerpen());
-        //test.setItems(kut);
-    
+       
      public void pressToevoegenBier(ActionEvent event) throws Exception { 
        
         int bierjaarint = Integer.parseInt(bierJaar.getText());
         Voorwerp v1 = new Bierdopje(bierMerk.getText(), bierNaam.getText(), bierjaarint);
         inv.add(v1);
-         setList();
-
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//        Stage stage = (Stage) bottonBierToevoegen.getScene().getWindow();
-//        stage.close();
+        setList();
 }
     
     public void pressToevoegenPostzegel(ActionEvent event) throws Exception { 
@@ -121,12 +129,6 @@ public class FXMLDocumentController implements Initializable {
         Voorwerp p1 = new Postzegel(lengte, breedte, naamPostzegel, jaar);
         inv.add(p1);
         setList();
-
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//        Stage stage = (Stage) buttonPostzegelToevoegen.getScene().getWindow();
-//        stage.close();
 }
     
     public void pressToevoegenSet(ActionEvent event) throws SQLException{ 
@@ -138,62 +140,17 @@ public class FXMLDocumentController implements Initializable {
         inv.add(new Set(naam, jaar));
         setList();
     }
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//        Stage stage = (Stage) buttonSetToevoegen.getScene().getWindow();
-//        stage.close();
-//}
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //public void pressButtonAddBier(ActionEvent event) throws Exception {               
-//        try {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddBier.fxml"));
-//                Parent root = (Parent) fxmlLoader.load();
-//                Stage stage = new Stage();
-//                stage.setScene(new Scene(root));  
-//                stage.show();
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//    }
-//   
-//   public void pressButtonAddZegel(ActionEvent event) throws Exception {               
-//        try {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddPostzegel.fxml"));
-//                Parent root = (Parent) fxmlLoader.load();
-//                Stage stage = new Stage();
-//                stage.setScene(new Scene(root));  
-//                stage.show();
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//}
-//    
-//   public void pressButtonAddSet(ActionEvent event) throws Exception {               
-//        try {
-//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("AddSet.fxml"));
-//                Parent root = (Parent) fxmlLoader.load();
-//                Stage stage = new Stage();
-//                stage.setScene(new Scene(root));  
-//                stage.show();
-//        } catch(Exception e) {
-//           e.printStackTrace();
-//          }
-//}
+     public void checked(ActionEvent event) throws SQLException{ 
+       
+        if(cbPostzegel.isSelected() == true){
+            cbBierdopje.setSelected(false);
+        } 
+        if(cbBierdopje.isSelected() == true){
+            cbPostzegel.setSelected(false);
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setList();

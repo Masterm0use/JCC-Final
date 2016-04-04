@@ -20,6 +20,6 @@ public class Bierdopje extends Voorwerp{
     
    @Override
     public String toString() {
-        return "Bierdopje:" + getNaam() + " - " + getJaarVanUitgave() + merk;
+        return "Bierdopje: " + getNaam() + " - " + getJaarVanUitgave() + " Merk: " + merk;
     }
 }

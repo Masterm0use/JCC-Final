@@ -61,6 +61,8 @@ public class Set {
     return null;
     }
     
-    
-   
+    @Override
+    public String toString() {
+        return "Set: " + getNaam() + " - " + getJaar() + " Voorwerpen: " + getVoorwerpen();
+    }
 }

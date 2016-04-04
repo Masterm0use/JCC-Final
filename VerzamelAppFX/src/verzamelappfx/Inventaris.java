@@ -50,6 +50,11 @@ public final class Inventaris {
         Voorwerp nlpostzegel2 = new Postzegel(20, 60, "Wilhelmina2", 1980);
         Voorwerp nlpostzegel3 = new Postzegel(20, 60, "Wilhelmina1", 1970);
         
+        Set test1 = new Set("Test", 2016);
+        
+        test1.add(nlpostzegel);
+        sets.add(test1);
+        
         voorwerpen.add(heinekendop);
         voorwerpen.add(nlpostzegel);
         voorwerpen.add(nlpostzegel2);
