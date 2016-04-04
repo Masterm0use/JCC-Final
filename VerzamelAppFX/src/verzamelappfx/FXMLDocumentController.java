@@ -26,9 +26,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Callback;
 
 
 /**
@@ -40,7 +42,7 @@ public class FXMLDocumentController implements Initializable {
     
     
    private Inventaris inv; 
-   ObservableList<String> rekt;
+   List<String> rekt;
     
     
     @FXML
@@ -79,15 +81,18 @@ public class FXMLDocumentController implements Initializable {
     public FXMLDocumentController() throws IOException, FileNotFoundException, SQLException {
         test = new ListView<>();
         inv = new Inventaris();
-//        rekt = test.getItems();
-//        
-//        
-//        
-//        for (Voorwerp vw : inv.getVoorwerpen() ) {
-//           rekt.add(vw.toString());
-//        }
-//        
-//        test.setItems(rekt);
+        rekt = new ArrayList<String>();
+        
+       
+    }
+    public void setList(){
+         rekt.clear();
+         rekt = test.getItems();          
+        
+        for (Voorwerp vw : inv.getVoorwerpen() ) {
+           rekt.add(vw.toString());
+        }
+        test.setItems(FXCollections.observableList(rekt));
     }
          //= FXCollections.observableArrayList(inv.getVoorwerpen());
         //test.setItems(kut);
@@ -97,6 +102,7 @@ public class FXMLDocumentController implements Initializable {
         int bierjaarint = Integer.parseInt(bierJaar.getText());
         Voorwerp v1 = new Bierdopje(bierMerk.getText(), bierNaam.getText(), bierjaarint);
         inv.add(v1);
+         setList();
 
 //        } catch(Exception e) {
 //           e.printStackTrace();
@@ -114,6 +120,7 @@ public class FXMLDocumentController implements Initializable {
         
         Voorwerp p1 = new Postzegel(lengte, breedte, naamPostzegel, jaar);
         inv.add(p1);
+        setList();
 
 //        } catch(Exception e) {
 //           e.printStackTrace();
@@ -129,6 +136,7 @@ public class FXMLDocumentController implements Initializable {
         jaar = Integer.parseInt(setJaar.getText());
         naam = setNaam.getText();
         inv.add(new Set(naam, jaar));
+        setList();
     }
 //        } catch(Exception e) {
 //           e.printStackTrace();
@@ -188,7 +196,7 @@ public class FXMLDocumentController implements Initializable {
 //}
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        
+        setList();
     }    
 }
 

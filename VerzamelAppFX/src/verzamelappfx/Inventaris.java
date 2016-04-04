@@ -56,8 +56,8 @@ public final class Inventaris {
         voorwerpen.add(nlpostzegel3);
         
         DM = new DatabaseMediator(props);
-        open();
-        DM.save(this);
+        //open();
+        //DM.save(this);
     }
     
     public void add(Voorwerp item) throws SQLException{
