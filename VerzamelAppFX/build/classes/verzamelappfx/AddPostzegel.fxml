@@ -7,17 +7,17 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="300.0000999999975" prefWidth="456.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="verzamelappfx.AddBierController">
+<AnchorPane id="AnchorPane" prefHeight="300.0000999999975" prefWidth="456.0000999999975" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="verzamelappfx.FXMLDocumentController">
   <children>
-    <TextField id="bierNaam" fx:id="postzegelNaam" layoutX="31.0" layoutY="86.0" prefWidth="163.0" />
+    <TextField id="bierNaam" layoutX="31.0" layoutY="86.0" prefWidth="163.0" />
     <Label layoutX="31.0" layoutY="66.0" text="Naam:" />
     <Label layoutX="30.0" layoutY="115.0" text="Jaar" />
     <Label layoutX="30.0" layoutY="30.0" text="Postzegel toevoegen" />
-    <Button id="bottonBierToevoegen" fx:id="buttonPostzegelToevoegen" layoutX="31.0" layoutY="232.0" mnemonicParsing="false" onAction="#pressToevoegenPostzegel" text="Toevoegen" />
-    <TextField id="bierMerk" fx:id="postzegelLengte" layoutX="31.0" layoutY="189.0" prefWidth="63.0" />
+    <Button id="bottonBierToevoegen" layoutX="31.0" layoutY="232.0" mnemonicParsing="false" text="Toevoegen" />
+    <TextField id="bierMerk" layoutX="31.0" layoutY="189.0" prefWidth="63.0" />
     <Label layoutX="31.0" layoutY="169.0" text="Lengte" />
-    <TextField id="bierJaar" fx:id="postzegelJaar" layoutX="31.0" layoutY="135.0" prefWidth="163.0" />
-    <TextField id="bierMerk" fx:id="PostzegelBreedte" layoutX="131.0" layoutY="189.0" prefWidth="63.0" />
+    <TextField id="bierJaar" layoutX="31.0" layoutY="135.0" prefWidth="163.0" />
+    <TextField id="bierMerk" layoutX="131.0" layoutY="189.0" prefWidth="63.0" />
     <Label layoutX="131.0" layoutY="169.0" text="Breedte" />
     <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="229.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true">
       <image>

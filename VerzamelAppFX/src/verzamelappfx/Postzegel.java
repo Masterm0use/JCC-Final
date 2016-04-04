@@ -10,13 +10,20 @@ package verzamelappfx;
  * @author joel
  */
 public class Postzegel extends Voorwerp {
+    
     private int breedte;
     private int lengte;
     
     
     public Postzegel (int breedte, int lengte, String naam, int jaar) {
         super (naam, jaar);    
+        
         this.breedte = breedte;
         this.lengte = lengte;
     }
+    
+    @Override
+    public String toString() {
+        return "Postzegel:" + getNaam() + " - " + getJaarVanUitgave();
     }
+}

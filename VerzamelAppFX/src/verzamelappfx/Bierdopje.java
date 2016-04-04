@@ -18,4 +18,8 @@ public class Bierdopje extends Voorwerp{
         this.merk = merk;       
     }
     
+   @Override
+    public String toString() {
+        return "Bierdopje:" + getNaam() + " - " + getJaarVanUitgave() + merk;
+    }
 }

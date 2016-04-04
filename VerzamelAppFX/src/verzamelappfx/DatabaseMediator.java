@@ -20,18 +20,15 @@ import java.util.Properties;
  *
  * @author ruud
  */
+
 public class DatabaseMediator 
 {
     private Properties props;
     private Connection conn;
     
-    
-    
-    
     public DatabaseMediator(Properties props)
     {
         configure(props);
-        
     }
     
     public final boolean configure(Properties props) 
@@ -62,6 +59,7 @@ public class DatabaseMediator
         conn = DriverManager.getConnection(url, username, password);
         conn.setAutoCommit(true);
     }
+     
      private void closeConnection() 
      {
         try {
@@ -119,6 +117,7 @@ public class DatabaseMediator
         }
          return voorwerpen;  
      }
+     
      public ArrayList<Set> loadSets(ArrayList<Voorwerp> voorwerpen) throws SQLException{
          ArrayList<Set> sets = new ArrayList<>();
           try {
@@ -143,6 +142,7 @@ public class DatabaseMediator
         }        
          return sets;
      }
+     
      public void save(Inventaris inv) throws SQLException{
      int i = 0;    
          
@@ -157,12 +157,17 @@ public class DatabaseMediator
      
         for (Voorwerp vw : inv.getVoorwerpen() ) {
              psVullenVoorwerp.setInt(1, i);
-             psVullenVoorwerp.setString(2, "derp");
-             psVullenVoorwerp.setInt(3, 1900);
+             psVullenVoorwerp.setString(2, vw.getNaam());
+             psVullenVoorwerp.setInt(3, vw.getJaarVanUitgave());
               psVullenVoorwerp.executeUpdate();
              i += 1;
              
          }
+        PreparedStatement psVullenSets = conn.prepareStatement("insert into set (id,naam) values (?,?)");
+        for(Set set :inv.getSets()){
+        psVullenSets.setInt(1, i);
+        psVullenSets.setString(2, set.getNaam());
+        }
 
      closeConnection();
      

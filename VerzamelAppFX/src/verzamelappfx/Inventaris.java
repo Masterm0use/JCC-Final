@@ -17,18 +17,17 @@ import java.util.*;
  *
  * @author ruud
  */
-public class Inventaris {
+public final class Inventaris {
+    
     private ArrayList<Voorwerp> voorwerpen;
     private ArrayList<Set> sets;
     private DatabaseMediator DM;
-
+     
+   
     public List<Voorwerp> getVoorwerpen() {
         return (List<Voorwerp>) Collections.unmodifiableList(voorwerpen);
     }
-    
      
-    
-    
     public List<Set> getSets() {
         return (List<Set>) Collections.unmodifiableList(sets);
     }
@@ -36,15 +35,15 @@ public class Inventaris {
     public Inventaris() throws FileNotFoundException, IOException, SQLException {
         voorwerpen = new ArrayList<>();
         sets = new ArrayList<>();
-        //Properties props = new Properties();
-        //try{        File f = new File("properties.properties");
-        //InputStream is = new FileInputStream(f);
-//        props.load(is);
-//        System.out.println(props.getProperty("username"));
-//        }
-//        catch(FileNotFoundException ex){
-//            System.err.println(ex.getMessage());
-//        }   
+        Properties props = new Properties();
+        try{        File f = new File("properties.properties");
+        InputStream is = new FileInputStream(f);
+        props.load(is);
+        System.out.println(props.getProperty("username"));
+        }
+         catch(FileNotFoundException ex){
+         System.err.println(ex.getMessage());
+        }   
       
         Voorwerp heinekendop = new Bierdopje("Heineken", "Heineken Special", 2015);
         Voorwerp nlpostzegel = new Postzegel(20, 60, "Wilhelmina3", 1990);
@@ -56,38 +55,39 @@ public class Inventaris {
         voorwerpen.add(nlpostzegel2);
         voorwerpen.add(nlpostzegel3);
         
-        //DM = new DatabaseMediator(props);
-        //open();
-        //DM.save(this);
+        DM = new DatabaseMediator(props);
+        open();
+        DM.save(this);
     }
     
-    public void add(Voorwerp item){
+    public void add(Voorwerp item) throws SQLException{
         voorwerpen.add(item);
+        DM.save(this);
     }
-    public void add(Set item){
+    
+    public void add(Set item) throws SQLException{
         sets.add(item);
+        DM.save(this);
     }
+    
     public void wisVoorwerp(int index)
     {
-        
         voorwerpen.remove(index);
     }
+    
     public void wisSet(int index)
     {
-        
         sets.remove(index);
     }
+    
     public boolean open() throws SQLException, IOException{
         voorwerpen = DM.loadItems();
         sets = DM.loadSets(voorwerpen);
         return true;
     }
+    
     public Set getSet(int i)
     {
         return sets.get(i);
     }
-    
-    
-
-    
 }

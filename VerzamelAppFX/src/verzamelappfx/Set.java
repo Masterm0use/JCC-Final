@@ -10,12 +10,15 @@ import java.util.*;
  * @author ruud
  */
 public class Set {
+    
     private String naam;
     private ArrayList<Set> subSets;
-    public String getNaam(){return naam;}
+    private ArrayList<Voorwerp> voorwerpen;
+    
+    public String getNaam(){ return naam; }
     
     public void setNaam(String value)
-    {naam = value;}
+    { naam = value; }
    
     private int jaar;
     
@@ -25,9 +28,7 @@ public class Set {
     
     public void setJaar(int jaar) {
         this.jaar = jaar;
-    }
-    
-    private ArrayList<Voorwerp> voorwerpen;
+    }  
    
     public ArrayList getVoorwerpen() {
         return voorwerpen;
@@ -43,6 +44,7 @@ public class Set {
     public void add(Voorwerp item){
         voorwerpen.add(item);
     }
+    
     public Voorwerp FindVoorwerp(String naam){
         for (Voorwerp voor : voorwerpen) {
             if(voor.getNaam()==naam){
@@ -59,4 +61,6 @@ public class Set {
     return null;
     }
     
+    
+   
 }

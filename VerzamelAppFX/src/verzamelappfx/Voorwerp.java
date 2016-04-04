@@ -20,6 +20,8 @@ public class Voorwerp implements Comparable<Voorwerp>{
         return naam;
     }
     
+    
+    
     public Voorwerp(String naam, int jaar)
     {
         jaarVanUitgave = jaar;

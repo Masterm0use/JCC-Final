@@ -19,7 +19,7 @@
               <children>
                 <AnchorPane layoutX="372.0" layoutY="194.0" minHeight="287.0" minWidth="411.0" prefHeight="287.0" prefWidth="411.0" style="-fx-background: #FFFFFF;">
                   <children>
-                    <TextArea layoutX="14.0" layoutY="14.0" prefHeight="259.377685546875" prefWidth="383.0" text="Een simple gemaakte app, waarbij &#10;er postzegels en bierdopjes toegevoegd kunnen worden aan de database.&#10;&#10;Verder kan er sets gemaak worden en daarbij voorwerpen aan toegevoegd worden." wrapText="true" />
+                    <TextArea editable="false" layoutX="14.0" layoutY="14.0" prefHeight="259.377685546875" prefWidth="383.0" text="Een simple gemaakte app, waarbij &#10;er postzegels en bierdopjes toegevoegd kunnen worden aan de database.&#10;&#10;Verder kan er sets gemaak worden en daarbij voorwerpen aan toegevoegd worden." wrapText="true" />
                   </children>
                 </AnchorPane>
                 <Label layoutX="121.0" layoutY="14.0" style="-fx-font: 100px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="VerzamelApp">
@@ -46,20 +46,28 @@
             <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="628.0" prefWidth="810.0">
               <children>
                 <ListView fx:id="test" prefHeight="451.0" prefWidth="426.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="204.0" />
-                <AnchorPane focusTraversable="false" layoutX="28.0" layoutY="526.0" prefHeight="129.0" prefWidth="300.0" visible="true">
+                <AnchorPane focusTraversable="false" layoutX="0.0" layoutY="542.0" minHeight="75.0" prefHeight="75.0" prefWidth="234.0" visible="true">
                   <children>
-                    <Label layoutX="14.0" layoutY="14.0" text="Voorwerp Toevoegen" />
-                    <Button id="bottonBier" fx:id="bottonAddBier" layoutX="14.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddBier" text="Bierdoptje" />
-                    <Button id="bottonBier" fx:id="bottonAddZegel" layoutX="119.0" layoutY="47.0" mnemonicParsing="false" onAction="#pressButtonAddZegel" text="Postzegel" />
+                    <Label layoutX="21.0" layoutY="65.0" text="Voorwerp Toevoegen" />
+                    <Button id="bottonBier" layoutX="14.0" layoutY="88.0" mnemonicParsing="false" text="Bierdoptje" />
                   </children>
                 </AnchorPane>
                 <Label layoutX="28.0" layoutY="14.0" minHeight="74.0" prefHeight="82.0" prefWidth="504.0" style="-fx-font: 50px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="Voorwerpen" textFill="$x1" />
-                <TextArea layoutX="28.0" layoutY="86.0" prefHeight="95.0" prefWidth="264.0" text="Alle voorwerpen zijn te zien in de rechter tabel. &#10;Verder kunnen we postzegels en bierdopje toegevoegd worden." wrapText="true" />
+                <TextArea editable="false" layoutX="28.0" layoutY="86.0" prefHeight="95.0" prefWidth="264.0" text="Alle voorwerpen zijn te zien in de rechter tabel. &#10;Verder kunnen we postzegels en bierdopje toegevoegd worden." wrapText="true" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                     <Image url="@../../build/classes/verzamelappfx/AlertDialog/AlertDialog.png" />
                   </image>
                 </ImageView>
+                <AnchorPane layoutX="34.0" layoutY="235.0" prefHeight="200.0" prefWidth="200.0">
+                  <children>
+                    <TextField fx:id="postzegelNaam" layoutX="0.0" layoutY="31.0" prefWidth="200.0" />
+                    <TextField fx:id="postzegelJaar" layoutX="0.0" layoutY="65.0" prefWidth="200.0" />
+                    <TextField fx:id="postzegelBreedte" layoutX="0.0" layoutY="100.0" prefWidth="200.0" />
+                    <Button id="bottonBier" fx:id="bottonAddZegel" layoutX="0.0" layoutY="173.0" mnemonicParsing="false" onAction="#pressToevoegenPostzegel" text="Postzegel" />
+                    <TextField fx:id="postzegelLengte" layoutX="0.0" layoutY="133.0" prefWidth="200.0" />
+                  </children>
+                </AnchorPane>
               </children>
             </AnchorPane>
           </content>
@@ -69,14 +77,14 @@
             <AnchorPane focusTraversable="false" prefHeight="129.0" prefWidth="300.0" visible="true">
               <children>
                 <Label layoutX="33.0" layoutY="14.0" minHeight="74.0" prefHeight="82.0" prefWidth="504.0" style="-fx-font: 50px Tahoma;&#10;    -fx-fill: linear-gradient(from 0% 0% to 100% 200%, repeat, aqua 0%, red 50%);&#10;    -fx-stroke: black;&#10;    -fx-stroke-width: 1;" text="Sets" textFill="$x1" />
-                <TextArea layoutX="33.0" layoutY="84.0" prefHeight="95.0" prefWidth="264.0" text="Alle sets met voorwerpen kunt u hier vinden. Zelf kan er ook voorwerpen aan de sets toegevoegd worden." wrapText="true" />
+                <TextArea disable="false" editable="false" layoutX="33.0" layoutY="84.0" prefHeight="95.0" prefWidth="264.0" text="Alle sets met voorwerpen kunt u hier vinden. Zelf kan er ook voorwerpen aan de sets toegevoegd worden." wrapText="true" />
                 <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="613.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                   <image>
                     <Image url="@Assets/AlertDialog.png" />
                   </image>
                 </ImageView>
                 <ListView id="test" layoutX="337.0" layoutY="204.0" prefHeight="451.0" prefWidth="426.0" />
-                <Button fx:id="bottonAddSet" layoutX="14.0" layoutY="629.0" mnemonicParsing="false" onAction="#pressButtonAddSet" text="Toevoegen" />
+                <Button id="bottonAddSet" layoutX="14.0" layoutY="629.0" mnemonicParsing="false" text="Toevoegen" />
               </children>
             </AnchorPane>
           </content>
