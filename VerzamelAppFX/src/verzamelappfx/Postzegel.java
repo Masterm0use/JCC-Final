@@ -24,6 +24,6 @@ public class Postzegel extends Voorwerp {
     
     @Override
     public String toString() {
-        return "Postzegel: " + getNaam() + " - " + getJaarVanUitgave();
+        return "Postzegel: " + getNaam() + " - " + getJaarVanUitgave() + " br: " + breedte + " le: "+lengte;
     }
 }
