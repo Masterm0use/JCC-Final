@@ -51,10 +51,13 @@ public final class Inventaris {
         Voorwerp nlpostzegel3 = new Postzegel(20, 60, "Wilhelmina1", 1970);
         
         Set test1 = new Set("Test", 2016);
-        
+        Set test2 = new Set("subTest", 20140);
+        test2.add(nlpostzegel3);
+        test2.add(heinekendop);
         test1.add(nlpostzegel);
         sets.add(test1);
-        
+        test1.addSet(test2);
+        System.out.println("aantal voorwerpen:"+ test1.countVoorwerpen());
         voorwerpen.add(heinekendop);
         voorwerpen.add(nlpostzegel);
         voorwerpen.add(nlpostzegel2);
