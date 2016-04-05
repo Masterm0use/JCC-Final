@@ -56,15 +56,15 @@
                 </ImageView>
                 <AnchorPane layoutX="15.0" layoutY="393.0" prefHeight="261.0" prefWidth="290.0">
                   <children>
-                    <TextField fx:id="postzegelNaam" layoutX="32.0" layoutY="31.0" prefWidth="200.0" />
-                    <TextField fx:id="postzegelJaar" layoutX="32.0" layoutY="77.0" prefWidth="200.0" />
-                    <TextField fx:id="postzegelBreedte" layoutX="32.0" layoutY="123.0" prefWidth="200.0" />
-                    <Button id="bottonBier" fx:id="bottonAddZegel" layoutX="32.0" layoutY="220.0" mnemonicParsing="false" onAction="#pressToevoegenPostzegel" text="Postzegel" />
-                    <TextField fx:id="postzegelLengte" layoutX="32.0" layoutY="169.0" prefWidth="200.0" />
-                    <Button id="bottonBier" layoutX="138.0" layoutY="220.0" mnemonicParsing="false" text="Bierdoptje" />
+                    <TextField id="postzegelNaam" fx:id="txtNaam" layoutX="32.0" layoutY="31.0" prefWidth="200.0" />
+                    <TextField id="postzegelJaar" fx:id="txtJaar" layoutX="32.0" layoutY="77.0" prefWidth="200.0" />
+                    <TextField id="postzegelBreedte" fx:id="txtJaarMerk" layoutX="32.0" layoutY="123.0" prefWidth="200.0" />
+                    <Button id="bottonBier" fx:id="buttonAddZegel" layoutX="32.0" layoutY="220.0" mnemonicParsing="false" onAction="#pressToevoegenPostzegel" text="Postzegel" />
+                    <TextField id="postzegelLengte" fx:id="txtLengte" layoutX="32.0" layoutY="169.0" prefWidth="200.0" />
+                    <Button id="bottonBier" fx:id="buttonAddBier" layoutX="138.0" layoutY="220.0" mnemonicParsing="false" onAction="#pressToevoegenBier" text="Bierdoptje" />
                     <Label layoutX="32.0" layoutY="11.0" text="Naam:" />
                     <Label layoutX="32.0" layoutY="57.0" text="Jaar:" />
-                    <Label id="Breedte" layoutX="32.0" layoutY="103.0" text="Breedte:" />
+                    <Label id="Breedte" fx:id="lbBreedte" layoutX="32.0" layoutY="103.0" text="Breedte:" />
                     <Label id="Breedte" layoutX="32.0" layoutY="149.0" text="Lengte:" />
                   </children>
                 </AnchorPane>
@@ -86,7 +86,15 @@
                   </image>
                 </ImageView>
                 <ListView id="test" fx:id="setsPre" layoutX="337.0" layoutY="204.0" prefHeight="451.0" prefWidth="426.0" />
-                <Button id="bottonAddSet" layoutX="14.0" layoutY="629.0" mnemonicParsing="false" text="Toevoegen" />
+                <AnchorPane layoutX="47.0" layoutY="451.0" minHeight="184.0" prefHeight="184.0" prefWidth="224.0">
+                  <children>
+                    <Button id="bottonAddSet" fx:id="buttonSetToevoegen" layoutX="14.0" layoutY="138.0" mnemonicParsing="false" onAction="#pressToevoegenSet" text="Toevoegen" />
+                    <TextField id="setNaam" fx:id="setJaar" layoutX="14.0" layoutY="92.0" prefWidth="200.0" />
+                    <TextField fx:id="setNaam" layoutX="14.0" layoutY="39.0" prefWidth="200.0" />
+                    <Label layoutX="14.0" layoutY="19.0" text="Naam:" />
+                    <Label layoutX="14.0" layoutY="72.0" text="Jaar" />
+                  </children>
+                </AnchorPane>
               </children>
             </AnchorPane>
           </content>

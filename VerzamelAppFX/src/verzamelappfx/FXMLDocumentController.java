@@ -51,31 +51,17 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private ListView<String> setsPre;
     @FXML
-    private Button bottonAddBier;
+    private Button buttonAddBier;
     @FXML
-    private Button bottonAddZegel;
+    private Button buttonAddZegel;
     @FXML
-    private Button bottonAddSet;
+    private TextField txtNaam;
     @FXML
-    private Button bottonBierToevoegen;
+    private TextField txtJaar;
     @FXML
-    private TextField bierNaam;
+    private TextField txtJaarMerk;
     @FXML
-    private TextField bierJaar;
-    @FXML
-    private TextField bierMerk;
-    @FXML
-    private TextField postzegelNaam;
-    @FXML
-    private TextField postzegelJaar;
-    @FXML
-    private TextField postzegelLengte;
-    @FXML
-    private TextField postzegelBreedte;
-    @FXML
-    private Button buttonPostzegelToevoegen;
-    @FXML
-    private Button buttonSetToevoegen;
+    private TextField txtLengte;
     @FXML
     private TextField setNaam;
     @FXML
@@ -84,6 +70,8 @@ public class FXMLDocumentController implements Initializable {
     private CheckBox cbPostzegel;
     @FXML
     private CheckBox cbBierdopje;
+    @FXML
+    private Label lbBreedte;
 
     public FXMLDocumentController() throws IOException, FileNotFoundException, SQLException {
         voorwerpenPre = new ListView<>();
@@ -113,22 +101,24 @@ public class FXMLDocumentController implements Initializable {
        
      public void pressToevoegenBier(ActionEvent event) throws Exception { 
        
-        int bierjaarint = Integer.parseInt(bierJaar.getText());
-        Voorwerp v1 = new Bierdopje(bierMerk.getText(), bierNaam.getText(), bierjaarint);
+        int bierjaarint = Integer.parseInt(txtJaar.getText());
+        Voorwerp v1 = new Bierdopje(txtJaarMerk.getText(), txtNaam.getText(), bierjaarint);
         inv.add(v1);
         setList();
+        clearTxt();
 }
     
     public void pressToevoegenPostzegel(ActionEvent event) throws Exception { 
        
-        int lengte = Integer.parseInt(postzegelLengte.getText());
-        int breedte = Integer.parseInt(postzegelBreedte.getText());
-        int jaar = Integer.parseInt(postzegelJaar.getText());
-        String naamPostzegel = postzegelNaam.getText();
+        int lengte = Integer.parseInt(txtLengte.getText());
+        int breedte = Integer.parseInt(txtJaarMerk.getText());
+        int jaar = Integer.parseInt(txtJaar.getText());
+        String naamPostzegel = txtNaam.getText();
         
         Voorwerp p1 = new Postzegel(lengte, breedte, naamPostzegel, jaar);
         inv.add(p1);
         setList();
+        clearTxt();
 }
     
     public void pressToevoegenSet(ActionEvent event) throws SQLException{ 
@@ -139,18 +129,37 @@ public class FXMLDocumentController implements Initializable {
         naam = setNaam.getText();
         inv.add(new Set(naam, jaar));
         setList();
+        clearTxt();
     }
     
      public void checked(ActionEvent event) throws SQLException{ 
        
         if(cbPostzegel.isSelected() == true){
             cbBierdopje.setSelected(false);
+            lbBreedte.setText("Breedte:");
+            txtLengte.setDisable(false);
+            buttonAddBier.setDisable(true);
+            buttonAddZegel.setDisable(false);
+            
         } 
         if(cbBierdopje.isSelected() == true){
             cbPostzegel.setSelected(false);
+            lbBreedte.setText("Merk:");
+            txtLengte.setDisable(true);
+            buttonAddZegel.setDisable(true);
+            buttonAddBier.setDisable(false);
         }
     }
 
+    public void clearTxt(){
+        txtLengte.clear();
+        txtJaar.clear();
+        txtJaarMerk.clear();
+        txtNaam.clear();
+        setNaam.clear();
+        setJaar.clear();
+    }
+     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         setList();
