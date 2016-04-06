@@ -58,6 +58,7 @@ public final class Inventaris {
         sets.add(test1);
         test1.addSet(test2);
         System.out.println("aantal voorwerpen:"+ test1.countVoorwerpen());
+        
         voorwerpen.add(heinekendop);
         voorwerpen.add(nlpostzegel);
         voorwerpen.add(nlpostzegel2);

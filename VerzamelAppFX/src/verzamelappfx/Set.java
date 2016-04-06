@@ -57,9 +57,10 @@ public class Set {
     public int countVoorwerpen() {
         int count = 0;
         count = count + voorwerpen.size();
-        if (subSets.isEmpty()) {
-            return count;
-        } else {
+//        if (subSets.isEmpty()) {
+//            return count;
+//        } else 
+        {
             for (Set subSet : subSets) {
                 count = count + subSet.countVoorwerpen();
             }
